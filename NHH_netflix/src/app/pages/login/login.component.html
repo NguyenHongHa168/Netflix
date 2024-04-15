@@ -5,15 +5,17 @@
     <div class="login-container">
         <div class="login-card">
             <h2 class="heading">Sign in</h2>
-            <div class="form-field">
-                <input type="text" class="input" placeholder="Email or phone number">
-            </div>
-            <div class="form-field">
-                <input type="text" class="input" placeholder="Password">
-            </div>
-            <div class="action-field">
-                <button class="login-button"> Sign In</button>
-            </div>
+            <form (ngSubmit)="onSubmit()">
+                <div class="form-field">
+                    <input type="text" class="input" name="email" [(ngModel)]="email" placeholder="Email or phone number">
+                </div>
+                <div class="form-field">
+                    <input type="password" class="input" name="Password" [(ngModel)]="password" placeholder="Password">
+                </div>
+                <div class="action-field">
+                    <button class="login-button"> Sign In</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
