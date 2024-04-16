@@ -25,7 +25,7 @@ movieService = inject(MovieService);
   nowPlayMovies :Movie[] =[];
   upComingMovies :Movie[] =[];
   bannerMovie!:Movie;
-  tmcbConfig= tmcbConfig
+  tmcbConfig= tmcbConfig;
   public domSanitise = inject(DomSanitizer);
 
   ngOnInit(): void {
