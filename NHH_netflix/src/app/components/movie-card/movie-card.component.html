@@ -1,5 +1,7 @@
-<div class="movie-card">
-    <img src="/assets/images/m_1.jpg" alt="movie">
-    <h4>title</h4>
+@if(movie){
+    <div class="movie-card">
+    <img [src]="tmcbConfig.imgPath + movie.poster_path" alt="movie">
+    <h4>{{movie.original_title}}</h4>
     <p>movie description</p>
 </div>
+}

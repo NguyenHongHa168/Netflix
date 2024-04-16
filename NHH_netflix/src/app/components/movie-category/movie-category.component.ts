@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { MovieCardComponent } from '../movie-card/movie-card.component';
+import { Movie } from '../../types/movies';
 
 @Component({
   selector: 'app-movie-category',
@@ -10,5 +11,7 @@ import { MovieCardComponent } from '../movie-card/movie-card.component';
   styleUrl: './movie-category.component.scss'
 })
 export class MovieCategoryComponent {
- @Input() title = ""
+ @Input() title = "";
+ @Input() movieList:Movie[] =[];
+
 }
