@@ -6,7 +6,8 @@ import { CommonModule } from '@angular/common';
 import { MovieCategoryComponent } from '../../components/movie-category/movie-category.component';
 import { MovieService } from '../../service/movie.service';
 import { Movie } from '../../types/movies';
-
+import { tmcbConfig } from '../../constants/config';
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-browse',
   standalone: true,
@@ -24,28 +25,40 @@ movieService = inject(MovieService);
   nowPlayMovies :Movie[] =[];
   upComingMovies :Movie[] =[];
   bannerMovie!:Movie;
+  tmcbConfig= tmcbConfig
+  public domSanitise = inject(DomSanitizer);
+
   ngOnInit(): void {
     // if(!this.loginService.isLoggedIn){
     //   this.router.navigateByUrl("/login");
     // }
-    this.movieService.getPopularMovie().subscribe((result:any) => {
-      console.log(result);
-      this.popularMovies = result.results
-      this.bannerMovie = this.popularMovies[0]
+    this.movieService.getPopularMovies().subscribe((result:any) => {
+      // console.log(result);
+      this.popularMovies = result.results;
+      this.bannerMovie = this.popularMovies[0];
+      // this.movieService.getMovieVideos(this.bannerMovie.id).subscribe((res:any)=>{
+      //   this.bannerMovie.videoKey = res.result.find((x:any)=> x.site='Youtube').key;
+      //   console.log("banner",this.bannerMovie);
+      // })
+      this.movieService
+        .getMovieVideos(this.bannerMovie.id)
+        .subscribe((res: any) => {
+          this.bannerMovie.videoKey = res.results.find(
+            (x: any) => (x.site = 'YouTube')
+          ).key;
+          console.log("test",this.bannerMovie)
+        });
     });
 
     this.movieService.getTopRatedMovies().subscribe((result:any) => {
-      console.log(result);
       this.topRateMovies = result.results
     });
 
     this.movieService.getNowPlayMovies().subscribe((result:any) => {
-      console.log(result);
       this.nowPlayMovies = result.results
     });
 
     this.movieService.getUpComingMovies().subscribe((result:any) => {
-      console.log(result);
       this.upComingMovies = result.results
     })
   }

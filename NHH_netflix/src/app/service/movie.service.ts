@@ -9,7 +9,7 @@ export class MovieService {
 httpService = inject(HttpClient);
 
 
-getPopularMovie(){
+getPopularMovies(){
   const headers = this.getHeaders()
   return this.httpService.get("https://api.themoviedb.org/3/movie/popular",{
     headers:headers
@@ -33,10 +33,17 @@ getUpComingMovies(){
     headers:headers
   })
 }
+getMovieVideos(videoId:number){
+  const headers = this.getHeaders()
+  return this.httpService.get(`https://api.themoviedb.org/3/movie/${videoId}/videos`,{
+    headers:headers
+  })
+}
 getHeaders(){
   let headers= new HttpHeaders();
   headers= headers.append("accept","application/json");
   headers= headers.append("Authorization","Bearer " + tmcbConfig.accessToken)
   return headers
 }
+
 }

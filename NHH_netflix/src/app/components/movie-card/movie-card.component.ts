@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Movie } from '../../types/movies';
+import { tmcbConfig } from '../../constants/config';
 
 @Component({
   selector: 'app-movie-card',
