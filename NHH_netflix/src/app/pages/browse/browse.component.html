@@ -1,24 +1,16 @@
 <div class="browse-page">
     <app-header></app-header>
     <div class="banner">
-        @if(bannerMovie && bannerMovie.videoKey){
-        <!-- <iframe class="banner-video" [src]="domSanitise.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+'?&mute=1')
-        + bannerMovie.videoKey" 
-        frameborder="0" 
-        ></iframe> -->
+        <img class="banner-img" [src]="tmcbConfig.imagePath + bannerMovie.poster_path" alt="movie">
+        <!-- @if(bannerMovie && bannerMovie.videoKey){
         <iframe
       class="banner-video"
-      [src]="
-        domSanitise.bypassSecurityTrustResourceUrl(
-          'https://www.youtube.com/embed/' + bannerMovie.videoKey + '?autoplay=1&mute=1&showinfo=0&controls=0'
-        )
-      "
-      frameborder="0"
-    ></iframe>
+      [src]=" domSanitise.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + bannerMovie.videoKey + '?autoplay=1&mute=1&showinfo=0&controls=0')"
+      frameborder="0"></iframe>
         }
         @else{
         <img class="banner-img" [src]="tmcbConfig.imagePath + bannerMovie.poster_path" alt="movie">
-        }
+        } -->
         <div class="banner-movie-info">
             <h4 class="banner-heading">{{bannerMovie.original_title}}</h4>
             <p class="banner-description">{{bannerMovie.overview}}</p>

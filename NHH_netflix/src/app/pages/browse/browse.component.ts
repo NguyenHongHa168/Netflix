@@ -8,6 +8,7 @@ import { MovieService } from '../../service/movie.service';
 import { Movie } from '../../types/movies';
 import { tmcbConfig } from '../../constants/config';
 import { DomSanitizer } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-browse',
   standalone: true,
@@ -16,6 +17,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrl: './browse.component.scss'
 })
 export class BrowseComponent {
+
   loginService = inject(LoginService);
   router = inject(Router)
 
@@ -33,20 +35,14 @@ movieService = inject(MovieService);
     //   this.router.navigateByUrl("/login");
     // }
     this.movieService.getPopularMovies().subscribe((result:any) => {
-      // console.log(result);
       this.popularMovies = result.results;
       this.bannerMovie = this.popularMovies[0];
-      // this.movieService.getMovieVideos(this.bannerMovie.id).subscribe((res:any)=>{
-      //   this.bannerMovie.videoKey = res.result.find((x:any)=> x.site='Youtube').key;
-      //   console.log("banner",this.bannerMovie);
-      // })
       this.movieService
         .getMovieVideos(this.bannerMovie.id)
         .subscribe((res: any) => {
           this.bannerMovie.videoKey = res.results.find(
             (x: any) => (x.site = 'YouTube')
           ).key;
-          console.log("test",this.bannerMovie)
         });
     });
 

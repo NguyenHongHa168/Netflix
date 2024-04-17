@@ -1,3 +1,26 @@
 <div class="header ">
     <img [src]="logoURL" alt="logo" class="w-52">
+    <ul class="navigation-menu">
+        @for( menu of menuHeader; track menu){
+            <div class="menu-items">{{menu}}</div>
+        }
+    </ul>
+    <ul class="element">
+        <div class="search-element" (mouseenter)="Search()" (mouseleave)="hiddenSeach()">
+            @if(hiddenSearch){
+                <li  class="items-icon search"><mat-icon>search</mat-icon></li>
+            }
+            @else{
+                <nz-input-group [nzSuffix]="suffixIconSearch">
+                    <input type="text" nz-input placeholder="Title, People, genres" />
+                  </nz-input-group>
+                  <ng-template #suffixIconSearch>
+                    <span nz-icon nzType="search"></span>
+                  </ng-template>
+            }
+        </div>
+        <li class="items-icon notify"><mat-icon>notifications</mat-icon></li>
+        <li class="items-icon kid"><mat-icon>face</mat-icon></li>
+        <li class="items-icon info"><mat-icon>arrow_drop_down</mat-icon></li>
+    </ul>
 </div>

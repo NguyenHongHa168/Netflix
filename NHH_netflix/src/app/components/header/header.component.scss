@@ -1,9 +1,41 @@
 .header {
-    position: fixed;
-    top:0;
-    left: 0;
-    right:0;
-    background-image: linear-gradient(to bottom, rgb(14 14 14), rgb(9 9 9/7%));
-    z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(to bottom, rgb(14 14 14), rgb(9 9 9/7%));
+  z-index: 9999;
+  color: white;
+  display: flex;
+  align-items: center;
+  width:100%;
+  img {
+    width: 20%;
   }
-  
+  .navigation-menu {
+    width: 60%;
+    display: flex;
+    padding: 0px 20px;
+    .menu-items{
+      padding:0px 20px;
+      cursor: pointer;
+      font-weight: 500;
+      &:hover{
+        color: #b1b1b1;
+      }
+    }
+  }
+  .element{
+    width:20%;
+    float:right;
+    display: flex;
+    justify-content: end;
+    margin-right:30px;
+    padding:5px 0px;
+    height:40px;
+    .items-icon{
+      font-size:20px;
+      padding:0px 8px;
+    }
+  }
+}
