@@ -15,8 +15,15 @@
             <h4 class="banner-heading">{{bannerMovie.original_title}}</h4>
             <p class="banner-description">{{bannerMovie.overview}}</p>
             <div class="banner-action">
-                <button class="play-btn">Play</button>
-                <button class="info-btn"> More Info</button>
+                <button class="play-btn flex">
+                    <mat-icon>play_arrow</mat-icon>
+                    <span>Play</span>
+                </button>
+                <button class="info-btn flex"> 
+                    <mat-icon>error_outline</mat-icon>
+                    <button class="px-1" mat-button (click)="openSignUpForm()">More Info</button> 
+                    <!-- <span class="px-1"> More Info</span>  -->
+                </button>
             </div>
         </div>
     </div>

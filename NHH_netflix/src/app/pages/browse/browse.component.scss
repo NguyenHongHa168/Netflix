@@ -21,7 +21,7 @@
     color: white;
     position: relative;
     display: flex;
-    z-index: 9999;
+    z-index: 999;
     flex-direction: column;
     top: 40%;
     padding-left: 2 rem;
@@ -29,32 +29,44 @@
     .banner-heading {
       font-size: 48px;
       font-weight: bold;
+      font-family: fantasy;
+      
     }
     .banner-description {
-      font-size: 18px;
+      font-size: 16px;
+      margin-top:20px;
+      font-weight: 400;
+      font-family:'Times New Roman', Times, serif ; 
     }
     .banner-action {
       font-weight: bold;
       font-size: 20px;
       display: flex;
       justify-content: start;
-      gap:32px;
       margin-top:32px;
+      outline: none;
+      font-size: 13px;
       .play-btn {
         border-radius: 4px;
-        background-color: #958f8f;
+        background-color: white;
         color: black;
         margin: 10px;
-        padding: 12px 50px;
+        padding: 10px 35px;
+        &:hover{
+          opacity: 0.8;
+        }
       }
       .info-btn {
-        padding: 12px 60px;
-        background-color: #424040;
+        padding: 10px 40px;
+        background-color: rgba($color: #515151, $alpha: 0.8);
          border-radius: 4px;
-        color: black;
+        color:white;
         margin: 10px;
-        padding: 12px 60px;
+        &:hover{
+          opacity: 0.8;
+        }
       }
+      
     }
   }
 }

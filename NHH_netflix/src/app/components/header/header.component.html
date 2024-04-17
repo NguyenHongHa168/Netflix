@@ -2,25 +2,46 @@
     <img [src]="logoURL" alt="logo" class="w-52">
     <ul class="navigation-menu">
         @for( menu of menuHeader; track menu){
-            <div class="menu-items">{{menu}}</div>
+        <div class="menu-items">{{menu}}</div>
         }
     </ul>
     <ul class="element">
         <div class="search-element" (mouseenter)="Search()" (mouseleave)="hiddenSeach()">
             @if(hiddenSearch){
-                <li  class="items-icon search"><mat-icon>search</mat-icon></li>
+            <li class="items-icon search"><mat-icon>search</mat-icon></li>
             }
             @else{
-                <nz-input-group [nzSuffix]="suffixIconSearch">
-                    <input type="text" nz-input placeholder="Title, People, genres" />
-                  </nz-input-group>
-                  <ng-template #suffixIconSearch>
-                    <span nz-icon nzType="search"></span>
-                  </ng-template>
+            <nz-input-group [nzSuffix]="suffixIconSearch">
+                <input type="text" nz-input placeholder="Title, People, genres" />
+            </nz-input-group>
+            <ng-template #suffixIconSearch>
+                <span nz-icon nzType="search"></span>
+            </ng-template>
             }
         </div>
-        <li class="items-icon notify"><mat-icon>notifications</mat-icon></li>
-        <li class="items-icon kid"><mat-icon>face</mat-icon></li>
+        <li class="items-icon notify">
+            <mat-icon>notifications</mat-icon>
+        </li>
+        <li class="items-icon kid">
+            <mat-icon>face</mat-icon>
+            <div class="icon-account text-xs my-3">
+                <div class="flex icon-account_el my-2">
+                    <img src="../../../assets/images/m_1.jpg" width="30px" alt=""><span class="px-2">Nguyen Van A</span>
+                </div>
+                <div class="flex icon-account_el"><mat-icon>edit</mat-icon>
+                    <p class="px-2">Manager Profile</p>
+                </div>
+                <div class="flex icon-account_el"><mat-icon>face</mat-icon>
+                    <p class="px-2">Transfer Profile</p>
+                </div>
+                <div class="flex icon-account_el"><mat-icon>supervised_user_circle</mat-icon>
+                    <p class="px-2">Account</p>
+                </div>
+                <div class="flex icon-account_el"><mat-icon>help_outline</mat-icon>
+                    <p class="px-2">Help center</p>
+                </div>
+            </div>
+        </li>
         <li class="items-icon info"><mat-icon>arrow_drop_down</mat-icon></li>
     </ul>
 </div>

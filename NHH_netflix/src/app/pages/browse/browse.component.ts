@@ -8,16 +8,22 @@ import { MovieService } from '../../service/movie.service';
 import { Movie } from '../../types/movies';
 import { tmcbConfig } from '../../constants/config';
 import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-browse',
   standalone: true,
-  imports: [HeaderComponent,CommonModule,MovieCategoryComponent],
+  imports: [
+    HeaderComponent,
+    CommonModule,
+    MovieCategoryComponent,
+    MatIconModule],
   templateUrl: './browse.component.html',
   styleUrl: './browse.component.scss'
 })
 export class BrowseComponent {
-
   loginService = inject(LoginService);
   router = inject(Router)
 
@@ -30,6 +36,10 @@ movieService = inject(MovieService);
   tmcbConfig= tmcbConfig;
   public domSanitise = inject(DomSanitizer);
 
+ 
+  constructor( private dialog: MatDialog){
+    
+  }
   ngOnInit(): void {
     // if(!this.loginService.isLoggedIn){
     //   this.router.navigateByUrl("/login");
@@ -58,6 +68,13 @@ movieService = inject(MovieService);
       this.upComingMovies = result.results
     })
   }
-
+  openSignUpForm() {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '60vw',  
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(result);
+    });
+  }
 
 }

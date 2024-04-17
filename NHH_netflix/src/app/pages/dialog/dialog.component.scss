@@ -1,0 +1,10 @@
+.info-movie{
+    z-index: 9999;
+    padding:24px;
+    position: relative;
+    .close{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}

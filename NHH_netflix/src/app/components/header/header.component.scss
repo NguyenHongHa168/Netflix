@@ -37,5 +37,57 @@
       font-size:20px;
       padding:0px 8px;
     }
+    .kid{
+      position: relative;
+      .icon-account{
+        position: absolute;
+        top: 20px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding:10px;
+        width: 250px;
+        cursor: pointer;
+        border-radius: 10px;
+        display: none;
+        &::before{
+          content: "";
+          position: absolute;
+          top: -5px;
+          right: 15px;
+          background-color: rgba(0, 0, 0, 0.7);;
+          width: 10px;
+          height: 10px;
+          transform: rotate(45deg);
+          z-index: -1;
+        }
+        .icon-account_el:hover{
+          opacity: 0.8;
+        }
+      }
+      &:hover .icon-account {
+        display: block;
+      }
+    }
+    .notify{
+      position: relative;
+        &::before{
+          position: absolute;
+          top: -10px;
+          right: 0;
+          width: 20px;
+          text-align: center;
+          border-radius: 50%;
+          content: "12";
+          font-size: 12px;
+          background-color: black;
+        }
+    }
+    .info{
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+
   }
 }
