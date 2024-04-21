@@ -1,5 +1,5 @@
 .browse-page {
-  background-color: black;
+  // background-color: black;
   .banner {
     height: 100vh;
     width: 100vw;
@@ -71,5 +71,8 @@
         }
       }
     }
+  }
+  .movie-categories{
+    flex-direction: column !important;
   }
 }

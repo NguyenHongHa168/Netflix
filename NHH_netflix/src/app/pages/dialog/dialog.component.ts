@@ -6,11 +6,12 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { tmcbConfig } from '../../constants/config';
 import { Movie } from '../../types/movies';
 import { MovieCategoryComponent } from '../../components/movie-category/movie-category.component';
+import { MovieCardComponent } from '../../components/movie-card/movie-card.component';
 
 @Component({
   selector: 'app-dialog',
   standalone: true,
-  imports: [MatIconModule,HeaderComponent,MovieCategoryComponent],
+  imports: [MatIconModule,HeaderComponent,MovieCategoryComponent,MovieCardComponent],
   templateUrl: './dialog.component.html',
   styleUrl: './dialog.component.scss'
 })
