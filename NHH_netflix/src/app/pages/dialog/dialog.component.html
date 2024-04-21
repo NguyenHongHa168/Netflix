@@ -1,9 +1,12 @@
-
 <div class="browse-page">
   <app-header></app-header>
   <div class="banner">
-      <img class="banner-img" [src]="tmcbConfig.imagePath + bannerMovie.poster_path" alt="movie">
-      <!-- @if(bannerMovie && bannerMovie.videoKey){
+    <img
+      class="banner-img"
+      [src]="tmcbConfig.imagePath + bannerMovie.poster_path"
+      alt="movie"
+    />
+    <!-- @if(bannerMovie && bannerMovie.videoKey){
       <iframe
     class="banner-video"
     [src]=" domSanitise.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + bannerMovie.videoKey + '?autoplay=1&mute=1&showinfo=0&controls=0')"
@@ -12,20 +15,24 @@
       @else{
       <img class="banner-img" [src]="tmcbConfig.imagePath + bannerMovie.poster_path" alt="movie">
       } -->
-      <div class="banner-movie-info">
-          <h4 class="banner-heading">{{bannerMovie.original_title}}</h4>
-          <!-- <p class="banner-description">{{bannerMovie.overview}}</p> -->
-          <div class="banner-action">
-              <button class="play-btn flex">
-                  <mat-icon>play_arrow</mat-icon>
-                  <span>Play</span>
-              </button>
-              <button class="info-btn flex"> 
-                  <mat-icon>add_circle</mat-icon>
-                </button>
-                <mat-icon>thumb_up_alt</mat-icon>
-          </div>
+    <div class="banner-movie-info">
+      <h4 class="banner-heading">{{ bannerMovie.original_title }}</h4>
+      <div class="banner-action">
+        <button class="play-btn flex">
+          <mat-icon>play_arrow</mat-icon>
+          <span>Play</span>
+        </button>
+        <button class="info-btn flex">
+          <mat-icon>add_circle</mat-icon>
+        </button>
+        <button class="info-btn flex mx-1">
+          <mat-icon>thumb_up_alt</mat-icon>
+        </button>
+      
       </div>
+    </div>
+    <div class="movie-categories px-16 relative z-50 -mt-40">
+      <app-movie-category [title]="'Trending'" [movieList]="popularMovies"></app-movie-category>
   </div>
-
+  </div>
 </div>

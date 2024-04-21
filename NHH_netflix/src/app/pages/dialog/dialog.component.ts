@@ -5,11 +5,12 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { HeaderComponent } from '../../components/header/header.component';
 import { tmcbConfig } from '../../constants/config';
 import { Movie } from '../../types/movies';
+import { MovieCategoryComponent } from '../../components/movie-category/movie-category.component';
 
 @Component({
   selector: 'app-dialog',
   standalone: true,
-  imports: [MatIconModule,HeaderComponent],
+  imports: [MatIconModule,HeaderComponent,MovieCategoryComponent],
   templateUrl: './dialog.component.html',
   styleUrl: './dialog.component.scss'
 })
@@ -42,6 +43,7 @@ export class DialogComponent {
 
   this.movieService.getTopRatedMovies().subscribe((result:any) => {
     this.topRateMovies = result.results
+    console.log("result", result);
   });
 
   this.movieService.getNowPlayMovies().subscribe((result:any) => {
@@ -53,7 +55,4 @@ export class DialogComponent {
   })
   }
 
-  // onNoClick(): void {
-  //   this.dialogRef.close();
-  // }
 }
