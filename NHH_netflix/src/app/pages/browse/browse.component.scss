@@ -18,13 +18,13 @@
   }
   .banner-movie-info {
     width: 40%;
-    color: white;
+    color: rgb(192, 192, 192);
     position: relative;
     display: flex;
     z-index: 999;
     flex-direction: column;
     top: 40%;
-    padding-left: 2 rem;
+    padding-left: 2rem;
     padding-left: 60px;
     .banner-heading {
       font-size: 48px;
@@ -35,8 +35,9 @@
     .banner-description {
       font-size: 16px;
       margin-top:20px;
-      font-weight: 400;
+      // font-weight: 400;
       font-family:'Times New Roman', Times, serif ; 
+
     }
     .banner-action {
       font-weight: bold;

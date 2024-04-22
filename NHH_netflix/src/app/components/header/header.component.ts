@@ -1,23 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { LOGO_URL } from '../../constants/config';
 import { MatIconModule } from '@angular/material/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NgModule } from '@angular/core';
 import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { LoginService } from '../../service/login.service';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatIconModule,NzInputModule],
+  imports: [MatIconModule,NzInputModule,CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
   logoURL= LOGO_URL;
   hiddenSearch:boolean= true;
+  loginService = inject(LoginService);
+  hiddenHeader :boolean = false;
   menuHeader =['Home',"TvShows","Movies","New & Popular", "Browse by Language"];
 
   ngOnInit() {
-    
+    if(this.loginService.isLoggedIn){
+      this.hiddenHeader = !this.hiddenHeader
+    }
+    // else{
+    //   this.hiddenHeader = true;
+    // }
+    console.log("isLoggedIn",this.loginService.isLoggedIn);
+    console.log(" this.hiddenHeader", this.hiddenHeader);
   }
 
   Search(){
@@ -26,5 +37,6 @@ export class HeaderComponent {
   hiddenSeach(){
     this.hiddenSearch = true;
   }
+
 
 }

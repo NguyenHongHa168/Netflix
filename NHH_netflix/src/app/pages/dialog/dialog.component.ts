@@ -7,11 +7,12 @@ import { tmcbConfig } from '../../constants/config';
 import { Movie } from '../../types/movies';
 import { MovieCategoryComponent } from '../../components/movie-category/movie-category.component';
 import { MovieCardComponent } from '../../components/movie-card/movie-card.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dialog',
   standalone: true,
-  imports: [MatIconModule,HeaderComponent,MovieCategoryComponent,MovieCardComponent],
+  imports: [MatIconModule,HeaderComponent,MovieCategoryComponent,MovieCardComponent,CommonModule],
   templateUrl: './dialog.component.html',
   styleUrl: './dialog.component.scss'
 })

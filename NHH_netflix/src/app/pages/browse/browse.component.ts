@@ -21,7 +21,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
     CommonModule,
     MovieCategoryComponent,
     MatIconModule,
-    FooterComponent
+    FooterComponent,
   ],
   templateUrl: './browse.component.html',
   styleUrl: './browse.component.scss'
@@ -35,6 +35,7 @@ movieService = inject(MovieService);
   topRateMovies :Movie[] =[];
   nowPlayMovies :Movie[] =[];
   upComingMovies :Movie[] =[];
+  ratedMovie :Movie[] =[];
   bannerMovie!:Movie;
   tmcbConfig= tmcbConfig;
   public domSanitise = inject(DomSanitizer);

@@ -17,7 +17,7 @@ import { HeaderComponent } from '../../components/header/header.component';
 })
 export class LoginComponent {
 bgURL = BG_IMG_URL;
-
+checked = true;
 email!: string;
 password!:string
 loginService = inject(LoginService)

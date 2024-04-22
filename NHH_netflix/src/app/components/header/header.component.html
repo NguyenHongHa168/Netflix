@@ -1,11 +1,11 @@
 <div class="header ">
     <img [src]="logoURL" alt="logo" class="w-52">
-    <ul class="navigation-menu">
+    <ul class="navigation-menu" [ngClass]="hiddenHeader ? 'd-block' : 'd-none'">
         @for( menu of menuHeader; track menu){
         <div class="menu-items">{{menu}}</div>
         }
     </ul>
-    <ul class="element">
+    <ul class="element" [ngClass]="hiddenHeader ? 'd-block' : 'd-none'">
         <div class="search-element" (mouseenter)="Search()" (mouseleave)="hiddenSeach()">
             @if(hiddenSearch){
             <li class="items-icon search"><mat-icon>search</mat-icon></li>

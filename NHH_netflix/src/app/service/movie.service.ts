@@ -27,12 +27,14 @@ getTopRatedMovies(){
     headers:headers
   })
 }
+
 getUpComingMovies(){
   const headers = this.getHeaders()
   return this.httpService.get("https://api.themoviedb.org/3/movie/upcoming",{
     headers:headers
   })
 }
+
 getMovieVideos(videoId:number){
   const headers = this.getHeaders()
   return this.httpService.get(`https://api.themoviedb.org/3/movie/${videoId}/videos`,{
