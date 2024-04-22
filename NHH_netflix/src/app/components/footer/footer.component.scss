@@ -67,6 +67,11 @@
         margin-top: 20px;
         margin-bottom: 30px;
         justify-content: end;
-        display: flex
+        display: flex;
+        
+        &:hover {
+            cursor: pointer;
+            color: gray;
+        }
     }
 }
