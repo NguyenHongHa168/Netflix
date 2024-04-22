@@ -24,22 +24,21 @@ export class DialogComponent {
   nowPlayMovies :Movie[] =[];
   upComingMovies :Movie[] =[];
   movieService = inject(MovieService);
-
   constructor(public dialogRef: MatDialogRef<DialogComponent>) {
   }
 
   ngOnInit(): void {
-   console.log("tmcbConfig", tmcbConfig);
-   this.movieService.getPopularMovies().subscribe((result:any) => {
-    this.popularMovies = result.results;
-    this.bannerMovie = this.popularMovies[0];
-    this.movieService
+    this.movieService.getPopularMovies().subscribe((result:any) => {
+      this.popularMovies = result.results;
+      this.bannerMovie = this.popularMovies[0];
+      this.movieService
       .getMovieVideos(this.bannerMovie.id)
       .subscribe((res: any) => {
         this.bannerMovie.videoKey = res.results.find(
           (x: any) => (x.site = 'YouTube')
         ).key;
       });
+      console.log("tmcbConfig", this.bannerMovie.genre_ids);
   });
 
   this.movieService.getTopRatedMovies().subscribe((result:any) => {

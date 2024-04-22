@@ -11,6 +11,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 @Component({
   selector: 'app-browse',
@@ -19,7 +20,9 @@ import { DialogComponent } from '../dialog/dialog.component';
     HeaderComponent,
     CommonModule,
     MovieCategoryComponent,
-    MatIconModule],
+    MatIconModule,
+    FooterComponent
+  ],
   templateUrl: './browse.component.html',
   styleUrl: './browse.component.scss'
 })
@@ -58,6 +61,7 @@ movieService = inject(MovieService);
 
     this.movieService.getTopRatedMovies().subscribe((result:any) => {
       this.topRateMovies = result.results
+      console.log("ncc", result);
     });
 
     this.movieService.getNowPlayMovies().subscribe((result:any) => {

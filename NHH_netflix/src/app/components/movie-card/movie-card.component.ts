@@ -12,5 +12,10 @@ import { tmcbConfig } from '../../constants/config';
 })
 export class MovieCardComponent {
 @Input() movie!:Movie;
-tmcbConfig = tmcbConfig  
+tmcbConfig = tmcbConfig;
+
+ngOnInit(): void{
+}
+
+
 }
