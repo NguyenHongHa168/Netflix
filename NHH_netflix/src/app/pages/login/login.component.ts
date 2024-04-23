@@ -28,6 +28,9 @@ ngOnInit(): void {
   if(this.loginService.isLoggedIn){
     this.router.navigateByUrl("/browse");
   }
+  else{
+    this.router.navigateByUrl("/login");
+  }
 }
 
 onSubmit(){

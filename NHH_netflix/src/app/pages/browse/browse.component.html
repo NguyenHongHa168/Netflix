@@ -21,9 +21,9 @@
                     <mat-icon>play_arrow</mat-icon>
                     <span>Play</span>
                 </button>
-                <button class="info-btn flex"> 
+                <button class="info-btn flex" (click)="openSignUpForm()"> 
                     <mat-icon>error_outline</mat-icon>
-                    <button class="px-1" mat-button (click)="openSignUpForm()">More Info</button> 
+                    <button class="px-1" mat-button >More Info</button> 
                 </button>
             </div>
         </div>
@@ -34,8 +34,8 @@
         <app-movie-category [title]="'Playlist'" [movieList]="nowPlayMovies"></app-movie-category>
         <app-movie-category [title]="'Top Rated'" [movieList]="topRateMovies"></app-movie-category>
         <app-movie-category [title]="'Upcoming'" [movieList]="upComingMovies"></app-movie-category>
-        <app-movie-category [title]="'Now playing'" [movieList]="nowPlayMovies"></app-movie-category>
-        <app-movie-category [title]="'Coming'" [movieList]="upComingMovies"></app-movie-category>
+        <!-- <app-movie-category [title]="'Now playing'" [movieList]="nowPlayMovies"></app-movie-category> -->
+        <!-- <app-movie-category [title]="'Coming'" [movieList]="upComingMovies"></app-movie-category> -->
     </div>
     <!-- footer -->
     <app-footer></app-footer>
