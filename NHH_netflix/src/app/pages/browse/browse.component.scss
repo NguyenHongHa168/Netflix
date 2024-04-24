@@ -73,3 +73,63 @@
     }
   }
 }
+
+
+
+
+// reponsive tablet, mobile
+@media (max-width: 460px) {
+  .movie-categories{
+    padding:0 !important;
+  }
+}
+@media (max-width: 530px) {
+  .movie-categories{
+    padding:0 !important;
+  }
+}
+@media (max-width: 670px) {
+  .movie-categories{
+    padding:0 !important;
+  }
+}
+@media (max-width: 750px) {
+  .movie-categories{
+    padding:0 !important;
+  }
+}
+@media (max-width: 975px) {
+  .banner-movie-info{
+    width: 100% !important;
+    padding:20px !important;
+    .banner-heading{
+      font-size: 28px !important;
+    }
+  }
+  .movie-categories{
+    padding:0 !important;
+  }
+}
+@media (max-width: 1400px) {
+  .browse-page{
+    .banner-movie-info{
+      width: 60%;
+    }
+    .banner-img{
+      max-height: 800px;
+    }
+  }
+  
+  .movie-categories{
+    padding:0 !important;
+  }
+}
+
+
+
+
+
+
+
+
+

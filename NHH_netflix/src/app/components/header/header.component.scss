@@ -27,6 +27,9 @@
   ul {
     margin: 0 !important;
   }
+  .header-menu{
+    display: none;
+  }
 
   .navigation-menu {
     width: 60%;
@@ -103,7 +106,7 @@
 
     .notify {
       position: relative;
-      padding:10px 8px;
+      padding: 10px 8px;
 
       &::before {
         position: absolute;
@@ -220,5 +223,109 @@
       font-size: 1.3em;
     }
 
+  }
+}
+
+// reponsive tablet, mobile
+@media (max-width: 1400px) {
+  .header {
+    justify-content: space-between !important;
+    // padding:0px 20px;
+    // .header-menu{
+    //   font-size: 30px;
+    // }
+    .navigation-menu {
+      display: none !important;
+    }
+  }
+}
+
+@media (max-width: 975px) {
+  .header {
+    justify-content: flex-start !important;
+    padding:0px 20px;
+     .header-menu{
+      display: block;
+    }
+    .navigation-menu {
+      display: none !important;
+    }
+    .element {
+      display: none !important;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .header {
+
+    justify-content: flex-start !important;
+    padding:0px 20px;
+     .header-menu{
+      display: block;
+    }
+    header-menu{
+      display: block;
+    }
+    .navigation-menu {
+      display: none !important;
+    }
+
+    .element {
+      display: none !important;
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  .header {
+
+    justify-content: flex-start !important;
+    padding:0px 20px;
+     .header-menu{
+      display: block;
+    }
+    .navigation-menu {
+      display: none !important;
+    }
+
+    .element {
+      display: none !important;
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  .header {
+
+    justify-content: flex-start !important;
+    padding:0px 20px;
+     .header-menu{
+      display: block;
+    }
+    .navigation-menu {
+      display: none !important;
+    }
+
+    .element {
+      display: none !important;
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .header {
+    justify-content: flex-start !important;
+    padding:0px 20px;
+    .header-menu{
+      display: block;
+    }
+    .navigation-menu {
+      display: none !important;
+    }
+
+    .element {
+      display: none !important;
+    }
   }
 }
