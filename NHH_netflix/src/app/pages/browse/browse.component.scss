@@ -23,13 +23,14 @@
     display: flex;
     z-index: 999;
     flex-direction: column;
-    top: 40%;
+    top: 30%;
     padding-left: 2rem;
     padding-left: 60px;
     .banner-heading {
       font-size: 48px;
       font-weight: bold;
       font-family: fantasy;
+      line-height:1.2;
       
     }
     .banner-description {
