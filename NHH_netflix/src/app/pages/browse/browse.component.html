@@ -4,8 +4,8 @@
     <!-- banner -->
     <div class="banner">
         <img class="banner-img" [src]="tmcbConfig.imagePath + bannerMovie?.poster_path" alt="movie">
-
-        <!-- @if(bannerMovie && bannerMovie.videoKey){
+<!-- 
+        @if(bannerMovie && bannerMovie.videoKey){
         <iframe
       class="banner-video"
       [src]=" domSanitise.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/' + bannerMovie.videoKey + '?autoplay=1&mute=1&showinfo=0&controls=0')"

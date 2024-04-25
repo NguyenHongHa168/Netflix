@@ -97,6 +97,14 @@
   .movie-categories{
     padding:0 !important;
   }
+  .banner-img{
+    height: 80% !important;
+    object-fit: cover !important;
+  }
+  
+  .info-btn{
+    display: none !important;
+  }
 }
 @media (max-width: 975px) {
   .banner-movie-info{
