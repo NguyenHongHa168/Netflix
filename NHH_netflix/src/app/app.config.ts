@@ -18,6 +18,6 @@ export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideClientHydration(),
     provideAnimations(),
     provideToastr(),
-    provideHttpClient(), provideAnimationsAsync(), provideNzI18n(en_US), importProvidersFrom(FormsModule), provideAnimationsAsync(), provideHttpClient()
+    provideHttpClient(), provideAnimationsAsync(), provideNzI18n(en_US), importProvidersFrom(FormsModule), provideAnimationsAsync(), provideHttpClient(), provideAnimationsAsync()
   ]
 };

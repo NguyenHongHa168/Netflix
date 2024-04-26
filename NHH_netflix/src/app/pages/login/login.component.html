@@ -4,23 +4,29 @@
         <div class="login-card">
             <h2 class="heading">Sign in</h2>
             <form (ngSubmit)="onSubmit()">
-                <div class="form-field ">
-                    <input type="text" class="input" name="email" [(ngModel)]="email"
-                        placeholder="Email or phone number">
+                <div class="form-field">
+                    <input type="text" class="input" name="email" [(ngModel)]="email" (input)="checkEmailFormat()"
+                        placeholder="Email or phone number" />
+                    <div *ngIf="emailFormatError" class="text-orange-800 text-xs mb-2 flex items-center">
+                        <mat-icon class="text-xs" style="transform: translate(0%,20%);">cancel</mat-icon>
+                        <div class="text-xs">Please enter a valid email address.</div>
+                    </div>
                 </div>
                 <div class="form-field my-2">
-                    <input type="password" class="input" name="Password" [(ngModel)]="password" placeholder="Password">
+                    <input type="password" class="input" name="Password" [(ngModel)]="password" placeholder="Password"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
                 </div>
+                <div *ngIf="capslockOn" class="text-white text-xs mb-2">Caps Locked</div>
                 <div class="action-field">
-                    <button class="btn login-button"> Sign In</button>
+                    <button class="btn login-button">Sign In</button>
                 </div>
             </form>
             <div class="text-gray-50 my-3" style="text-align: center;"> OR </div>
             <div class="action-field">
                 <button class="btn sign-in__code"> Use a Sign-In Code </button>
             </div>
-            <div class="forgot-btn my-3" style="text-align: center;"> 
-                <a class="text-gray-50" href="">Forgot password?</a> 
+            <div class="forgot-btn my-3" style="text-align: center;">
+                <a class="text-gray-50" href="">Forgot password?</a>
             </div>
             <div class="text-gray-50 my-2">New to Netflix? <span><a href="">Sign up now.</a> </span></div>
         </div>
