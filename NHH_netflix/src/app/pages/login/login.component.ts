@@ -20,11 +20,11 @@ export class LoginComponent {
   bgURL = BG_IMG_URL;
   checked = true;
   email!: string;
-  password!: string
-  loginService = inject(LoginService)
-  router = inject(Router)
-  toasterService = inject(ToastrService)
-
+  password: string ='';
+  showPassword: boolean = false;
+  loginService = inject(LoginService);
+  router = inject(Router);
+  toasterService = inject(ToastrService);
   emailFormatError: boolean = false;
   checkEmailFormat() {
     if (this.email && !this.email.trim().toLowerCase().endsWith('@gmail.com')) {
@@ -40,6 +40,9 @@ export class LoginComponent {
     else {
       this.router.navigateByUrl("/login");
     }
+  }
+  togglePw() {
+    this.showPassword = !this.showPassword;
   }
 
   onSubmit() {

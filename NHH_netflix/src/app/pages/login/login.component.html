@@ -13,8 +13,16 @@
                     </div>
                 </div>
                 <div class="form-field my-2">
-                    <input type="password" class="input" name="Password" [(ngModel)]="password" placeholder="Password"
-                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+                    <input type="{{ showPassword ? 'text' : 'password' }}" class="input relative" name="Password"
+                        [(ngModel)]="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+                    <span class="icon-pw" (click)="togglePw()">
+                        @if(!showPassword){
+                        <i class="fa-solid fa-eye text-white absolute"></i>
+                        }
+                        @else {
+                        <i class="fa-solid fa-eye-slash text-white absolute"></i>
+                        }
+                    </span>
                 </div>
                 <div *ngIf="capslockOn" class="text-white text-xs mb-2">Caps Locked</div>
                 <div class="action-field">

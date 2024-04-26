@@ -44,16 +44,23 @@
         width: 100px;
         height: 100px;
     }
+  
   }
   
   @media (max-width: 670px) {
-   
+    .title{
+        display: none;
+    }
   }
   
   @media (max-width: 530px) {
-   
+    .title{
+        display: none;
+    }
   }
   
   @media (max-width: 460px) {
- 
+    .title{
+        display: none;
+    }
   }
