@@ -17,5 +17,4 @@ tmcbConfig = tmcbConfig;
 ngOnInit(): void{
 }
 
-
 }

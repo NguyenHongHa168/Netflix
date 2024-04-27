@@ -4,8 +4,6 @@ import { MovieCardComponent } from '../movie-card/movie-card.component';
 import { Movie } from '../../types/movies';
 import { CarouselModule } from 'primeng/carousel';
 
-
-
 @Component({
   selector: 'app-movie-category',
   standalone: true,

@@ -15,14 +15,14 @@ import { Router } from '@angular/router';
 })
 
 export class HeaderComponent {
-  logoURL = LOGO_URL;
-  hiddenSearch: boolean = true;
-  loginService = inject(LoginService);
-  hiddenHeader: boolean = false;
-  hiddenMenuMobile:boolean = true;
-  menuHeader = ['Home', "TvShows", "Movies", "New & Popular", "Browse by Language"];
   email!: string;
   password!: string;
+  hiddenHeader: boolean = false;
+  hiddenMenuMobile:boolean = true;
+  hiddenSearch: boolean = true;
+  logoURL = LOGO_URL;
+  menuHeader = ['Home', "TvShows", "Movies", "New & Popular", "Browse by Language"];
+  loginService = inject(LoginService);
   toasterService = inject(ToastrService)
   router = inject(Router)
 
@@ -46,7 +46,7 @@ export class HeaderComponent {
     this.router.navigateByUrl('/**');
   }
 
-  checkClassMenu=document.getElementsByClassName('header-menu');
+  checkClassMenu =document.getElementsByClassName('header-menu');
   selectHeaderMenu(){
     if(this.checkClassMenu){
       this.hiddenMenuMobile = !this.hiddenMenuMobile
