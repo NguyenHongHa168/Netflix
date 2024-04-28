@@ -6,6 +6,7 @@ import { LoginService } from '../../service/login.service';
 import { CommonModule } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -40,7 +41,6 @@ export class HeaderComponent {
   }
 
   logOut() {
-    console.log(1);
     localStorage.clear();
     this.toasterService.success("logout success");
     this.router.navigateByUrl('/**');
@@ -52,6 +52,13 @@ export class HeaderComponent {
       this.hiddenMenuMobile = !this.hiddenMenuMobile
     }
   }
+  checkSearch : boolean = false;
+  onKeydown(event: KeyboardEvent) {
+    if (event.key === "Enter") {
+      this.router.navigateByUrl("/search");
+    }
+}
+
 
 
 }

@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { MovieSearchComponent } from '../../components/movie-search/movie-search.component';
 
 @Component({
   selector: 'app-browse',
@@ -22,6 +23,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
     MovieCategoryComponent,
     MatIconModule,
     FooterComponent,
+    MovieSearchComponent
   ],
   templateUrl: './browse.component.html',
   styleUrl: './browse.component.scss'
@@ -85,6 +87,7 @@ export class BrowseComponent {
     this.movieService.getUpComingMovies().subscribe((result: any) => {
       this.upComingMovies = result.results
     })
+
   }
 
   openSignUpForm() {
@@ -95,5 +98,6 @@ export class BrowseComponent {
       console.log(result);
     });
   }
+   
 
 }
