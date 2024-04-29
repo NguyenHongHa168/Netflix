@@ -5,7 +5,7 @@
     </a>
     <ul class="navigation-menu" [ngClass]="hiddenHeader ? 'd-block' : 'd-none'">
         @for( menu of menuHeader; track menu){
-        <div class="menu-items">{{menu}}</div>
+        <a href="" class="menu-items text-white">{{menu.title}}</a>
         }
     </ul>
     <ul class="element" [ngClass]="hiddenHeader ? 'd-block' : 'd-none'">

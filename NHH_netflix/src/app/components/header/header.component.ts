@@ -19,10 +19,32 @@ export class HeaderComponent {
   email!: string;
   password!: string;
   hiddenHeader: boolean = false;
-  hiddenMenuMobile:boolean = true;
+  hiddenMenuMobile: boolean = true;
   hiddenSearch: boolean = true;
+  checkSearch: boolean = false;
   logoURL = LOGO_URL;
-  menuHeader = ['Home', "TvShows", "Movies", "New & Popular", "Browse by Language"];
+  menuHeader = [
+    {
+      id: 1,
+      title: 'Home'
+    },
+    {
+      id: 2,
+      title: 'TvShows'
+    },
+    {
+      id: 3,
+      title: 'Movies'
+    },
+    {
+      id: 4,
+      title: 'New & Popular'
+    },
+    {
+      id: 5,
+      title: 'Browse by Language'
+    }
+  ];
   loginService = inject(LoginService);
   toasterService = inject(ToastrService)
   router = inject(Router)
@@ -46,18 +68,18 @@ export class HeaderComponent {
     this.router.navigateByUrl('/**');
   }
 
-  checkClassMenu =document.getElementsByClassName('header-menu');
-  selectHeaderMenu(){
-    if(this.checkClassMenu){
+  checkClassMenu = document.getElementsByClassName('header-menu');
+  selectHeaderMenu() {
+    if (this.checkClassMenu) {
       this.hiddenMenuMobile = !this.hiddenMenuMobile
     }
   }
-  checkSearch : boolean = false;
   onKeydown(event: KeyboardEvent) {
     if (event.key === "Enter") {
       this.router.navigateByUrl("/search");
     }
-}
+  }
+
 
 
 
