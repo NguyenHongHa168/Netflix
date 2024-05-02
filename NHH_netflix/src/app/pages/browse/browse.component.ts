@@ -50,20 +50,18 @@ export class BrowseComponent {
   iframeUrl: SafeResourceUrl | undefined;
   toggleMute() {
     this.isMuted = !this.isMuted;
-
     // Cập nhật URL của iframe để bật/tắt tiếng
-    const videoKey = this.bannerMovie.videoKey;
+    const videoKey = this.bannerMovie;
     const url = `https://www.youtube.com/embed/${videoKey}${this.urlFilm.replace(/mute=\d/, `mute=${this.isMuted ? '1' : '0'}`)}`;
     this.iframeUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(url);
+    // this.iframeUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(url);
+    console.log("ncc", this.iframeUrl);
   }
   ngOnInit(): void {
     // if(!this.loginService.isLoggedIn){
     //   this.router.navigateByUrl("/login");
     // }
-    const videoKey = this.bannerMovie;
-    const url = `https://www.youtube.com/embed/${videoKey}${this.urlFilm}`;
-    this.iframeUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(url);
-
+     
     this.movieService.getPopularMovies().subscribe((result: any) => {
       this.popularMovies = result.results;
       this.bannerMovie = this.popularMovies[0];
